@@ -6,4 +6,4 @@
 
 ## classmodel.py 构建所有类
 
-## main.py 运行所有函数
+## main.py 主函数与超参数
