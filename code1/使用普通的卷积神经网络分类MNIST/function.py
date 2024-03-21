@@ -91,10 +91,10 @@ def train(path, output_=10, batch_size=32, lr=0.01, device='cpu', epochs=30):
         for i, (x, y) in enumerate(train_loader):  # 获取输入与输出
             x = x.to(device)  # 将图片转换移动到设备上
             # 将输出数据转换为one_hot编码并转换为32位浮点数并移动到设备上
-            y = torch.tensor(F.one_hot(y, num_classes=output_), dtype=torch.float32).to(device)
+            y = F.one_hot(y, num_classes=10).to(device)
             optimizer.zero_grad()  # 将优化器梯度置零
             pre = model(x)  # 预测数据
-            loss = lossFuction(pre, y)  # 计算损失
+            loss = lossFuction(pre, y.float())  # 计算损失
             loss.backward()  # 反向传播
             optimizer.step()  # 梯度更新
             if (i + 1) % 100 == 0:
