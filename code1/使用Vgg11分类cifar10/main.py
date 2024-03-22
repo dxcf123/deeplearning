@@ -1,6 +1,6 @@
 import function
 
-path = r'C:\Users\30535\Desktop\CodeProgram\Python\deepstudy\data'  # 数据路径
+path = r''  # 数据路径
 batch_size = 64  # 批量
 lr = 0.0001  # 学习率
 device = 'cuda'  # 训练设备
