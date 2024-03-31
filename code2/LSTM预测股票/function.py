@@ -40,7 +40,7 @@ def split_data(stock, lookback, late=1):
     for index in range(len(data_raw) - lookback - late + 1):
         data.append(data_raw[index + late - 1: index + late - 1 + lookback])
     # 获得相应标签
-    labels = data_raw[lookback:]
+    labels = data_raw[lookback+late-1:]
 
     # 随机打乱数据集
     index = [i for i in range(int(len(data) * 0.90))]
